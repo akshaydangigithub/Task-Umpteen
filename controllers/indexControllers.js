@@ -20,13 +20,13 @@ exports.usersignup = catchAsyncErrors(async (req, res, next) => {
 });
 
 exports.usersignin = catchAsyncErrors(async (req, res, next) => {
-  const user = await User.findOne({ email: req.body.email }).select(
+  const user = await User.findOne({ username: req.body.username }).select(
     "+password"
   );
 
   if (!user) {
     return next(
-      new ErrorHandler("User not found with this email address", 404)
+      new ErrorHandler("Username or Password incorrect", 404)
     );
   }
 

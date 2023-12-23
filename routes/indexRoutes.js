@@ -7,7 +7,7 @@ const {
   usersignout,
   allusers,
   updateUser,
-  deleteUser
+  deleteUser,
 } = require("../controllers/indexControllers");
 const { isauthenticated } = require("../middlewares/auth");
 const router = express.Router();

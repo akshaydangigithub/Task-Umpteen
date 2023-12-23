@@ -10,6 +10,10 @@ require("./models/database").connectDatabase();
 const logger = require("morgan");
 app.use(logger("tiny"));
 
+// cors
+const cors = require("cors");
+app.use(cors());
+
 // body parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -28,6 +32,7 @@ app.use(cookieParser());
 
 // routes
 app.use("/", require("./routes/indexRoutes"));
+app.use("/api", require("./routes/getInTouchRoutes"));
 
 // error handling
 const ErrorHandler = require("./utils/errorHandler");
