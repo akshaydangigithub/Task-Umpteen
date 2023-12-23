@@ -33,6 +33,7 @@ app.use(cookieParser());
 // routes
 app.use("/", require("./routes/indexRoutes"));
 app.use("/api", require("./routes/getInTouchRoutes"));
+// end routes
 
 // error handling
 const ErrorHandler = require("./utils/errorHandler");
